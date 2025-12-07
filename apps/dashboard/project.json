@@ -18,6 +18,7 @@
     "serve-static": {
       "continuous": true,
       "executor": "@nx/web:file-server",
+      "dependsOn": ["^serve-static"],
       "options": {
         "buildTarget": "dashboard:build",
         "port": 4200,
