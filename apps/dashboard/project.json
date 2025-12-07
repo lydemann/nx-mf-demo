@@ -59,8 +59,9 @@
     },
     "serve": {
       "continuous": true,
-      "executor": "@nx/angular:module-federation-dev-server",
+      "executor": "@nx/angular:dev-server",
       "options": {
+        "buildTarget": "dashboard:build",
         "port": 4200,
         "publicHost": "http://localhost:4200"
       },
