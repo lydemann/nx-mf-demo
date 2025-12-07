@@ -1,0 +1,42 @@
+{
+  "name": "remote",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/remote/src",
+  "tags": [],
+  "targets": {
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "remote:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "remote:build",
+        "port": 4203,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "remote:build:development"
+        },
+        "production": {
+          "buildTarget": "remote:build:production"
+        }
+      }
+    },
+    "serve": {
+      "options": {
+        "port": 4203
+      }
+    }
+  }
+}
