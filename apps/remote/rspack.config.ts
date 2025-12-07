@@ -23,10 +23,7 @@ export default async () => {
           },
         ],
         styles: ['./src/styles.scss'],
-        devServer: {
-          port: 4203,
-          publicHost: 'http://localhost:4203',
-        },
+        devServer: {},
       },
     },
     {
